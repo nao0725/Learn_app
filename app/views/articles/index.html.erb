@@ -31,3 +31,13 @@
 
 <div><%=image_url ("code.png") %></div>
 
+<% @greeting = capture do %>
+  <p>ようこそ！日付と時刻は<%= Time.now %>です</p>
+<% end %>
+
+<%= @greeting %>
+
+<% content_for :index_script do %>
+  <script>alert('Hello!')</script>
+  <%= @greeting %>
+<% end %>
