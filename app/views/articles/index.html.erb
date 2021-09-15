@@ -31,13 +31,9 @@
 
 <div><%=image_url ("code.png") %></div>
 
-<% @greeting = capture do %>
-  <p>ようこそ！日付と時刻は<%= Time.now %>です</p>
-<% end %>
-
-<%= @greeting %>
-
-<% content_for :index_script do %>
-  <script>alert('Hello!')</script>
-  <%= @greeting %>
-<% end %>
+<h3>時間</h3>
+<%= distance_of_time_in_words(Time.now, Time.now + 60.seconds, include_seconds: true)%> <br>
+<%= time_ago_in_words(10.hours.from_now) %><br>
+<%= select_hour(Time.now + 6.hours)%>時 <br>
+<%= select_datetime(Time.now + 4.days)%>時 <br>
+<%= select_day(Time.now + 2.days)%>
