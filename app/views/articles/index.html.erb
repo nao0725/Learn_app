@@ -37,3 +37,32 @@
 <%= select_hour(Time.now + 6.hours)%>時 <br>
 <%= select_datetime(Time.now + 4.days)%>時 <br>
 <%= select_day(Time.now + 2.days)%>
+
+
+<h3>チェック</h3>
+<%= check_box_tag("article", "validated") %>
+<%= select_tag([ "VISA", "MasterCard" ]) %>
+
+<%= field_set_tag do %>
+  <p><%= text_field_tag 'name' %></p>
+<% end %>
+
+
+<h3>javascript</h3>
+<%= javascript_tag "('すべて良好')" %> 
+
+
+
+<h3>Number</h3>
+<%= number_to_currency(120.50) %> <br>
+<%= number_to_human_size(123400000000000) %> <br>
+<%= number_to_percentage(100, precision: 0) %> <br>
+<%= number_to_phone(1235551234) %> <br>
+<%= number_with_delimiter(12345678) %> <br>
+
+
+
+<%= strip_links('ブログ: <a href="http://myblog.com/">開く</a>')%>
+
+
+<%= csrf_meta_tags %>
